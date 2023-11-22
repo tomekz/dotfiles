@@ -3,5 +3,8 @@ The purpose of this repository is to provide a centralized location for all of m
 ## Install with stow
 
 ```bash
-stow --target ~/.config .
+# tmux
+stow --target ~ tmux
+# nvim
+stow --target ~ nvim
 ```
