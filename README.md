@@ -7,4 +7,6 @@ The purpose of this repository is to provide a centralized location for all of m
 stow --target ~ tmux
 # nvim
 stow --target ~ nvim
+# zsh
+stow --target ~ zsh
 ```
