@@ -8,5 +8,6 @@ stow --target ~ tmux
 # nvim
 stow --target ~ nvim
 # zsh
+# requires the oh-my-zsh submodule to be initialized
 stow --target ~ zsh
 ```
