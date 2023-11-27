@@ -71,7 +71,7 @@ SOLARIZED_THEME="dark"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git nvm zsh-z zsh-autosuggestions zsh-fzf-history-search zsh-vi-mode) 
+plugins=(git z zsh-autosuggestions zsh-fzf-history-search zsh-vi-mode) 
 
 source $ZSH/oh-my-zsh.sh
 
@@ -101,16 +101,11 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias vim='nvim'
-alias lzd='lazydocker'
-
-bindkey -v
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-source <(kubectl completion zsh)
+# alias lzd='lazydocker'
 
 # go path
-export GOPATH=$HOME/go
-export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
+# export GOPATH=$HOME/go
+# export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
 
 # java path
 # export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_221.jdk/Contents/Home
