@@ -19,9 +19,11 @@ null_ls.setup {
     formatting.google_java_format,
     formatting.goimports,
     formatting.eslint_d,
+    formatting.terraform_fmt,
     diagnostics.flake8,
     diagnostics.golangci_lint,
     diagnostics.eslint,
+    diagnostics.terraform_validate,
   },
   on_attach = function(client, bufnr)
     if client.supports_method "textDocument/formatting" then
