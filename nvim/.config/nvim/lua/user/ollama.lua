@@ -21,6 +21,10 @@ gen.prompts["Review_Code"] = {
   prompt = "Review the following code and make concise suggestions:\n```$filetype\n$text\n```",
 }
 
+gen.prompts["Ask"] = {
+  prompt = "Regarding the following text, $input:\n$text , please provide examples in Go",
+}
+
 -- return {
 --     Generate = {prompt = "$input", replace = true},
 --     Summarize = {prompt = "Summarize the following text:\n$text"},

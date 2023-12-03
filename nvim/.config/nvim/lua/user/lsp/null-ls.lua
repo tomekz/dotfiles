@@ -23,7 +23,7 @@ null_ls.setup {
     diagnostics.flake8,
     diagnostics.golangci_lint,
     diagnostics.eslint,
-    diagnostics.terraform_validate,
+    -- diagnostics.terraform_validate,
   },
   on_attach = function(client, bufnr)
     if client.supports_method "textDocument/formatting" then
