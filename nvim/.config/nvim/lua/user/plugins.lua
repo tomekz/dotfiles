@@ -65,6 +65,7 @@ return packer.startup(function(use)
   use { "christoomey/vim-tmux-navigator" }
   use { "folke/which-key.nvim" }
   use { "mbbill/undotree" }
+  use { "epwalsh/obsidian.nvim" }
   use { "vimwiki/vimwiki" }
   use {
     "folke/trouble.nvim",
