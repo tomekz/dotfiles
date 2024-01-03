@@ -4,6 +4,12 @@ if not status_ok then
 end
 
 obsidian.setup {
+    workspaces = {
+      {
+        name = "work",
+        path = "~/Documents/obisidian/work",
+      },
+    },
     version = "*",  -- recommended, use latest release instead of latest commit
     lazy = true,
     ft = "markdown",
