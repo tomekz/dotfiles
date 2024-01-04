@@ -157,6 +157,15 @@ local mappings = {
       "Workspace Symbols",
     },
   },
+
+  o = {
+    name = "obsidian",
+    N = { "<cmd>ObsidianNew<cr>", "Create new note" },
+    n = { "<cmd>ObsidianTemplate<cr>", "Create new note from template" },
+    t = { "<cmd>ObsidianToday<cr>", "Create new daily note" },
+    s = { "<cmd>ObsidianSearch<cr>", "Search a note" },
+  },
+
   s = {
     name = "Search",
     b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
