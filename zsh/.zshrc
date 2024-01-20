@@ -101,7 +101,8 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias vim='nvim'
-# alias lzd='lazydocker'
+alias lzd='lazydocker'
+alias lzq='lazygit'
 
 # go path
 # export GOPATH=$HOME/go

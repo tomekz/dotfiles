@@ -209,7 +209,7 @@ return packer.startup(function(use)
         "nvim-treesitter/nvim-treesitter-textobjects",
         after = "nvim-treesitter",
         requires = "nvim-treesitter/nvim-treesitter",
-        commit = "bd10350"
+        commit = "19a91a38b02c1c28c14e0ba468d20ae1423c39b2"
     }
 
     -- Git
