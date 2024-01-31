@@ -158,7 +158,7 @@ local mappings = {
         n = {"<cmd>ObsidianNew<cr>", "Create new note"},
         N = {"<cmd>ObsidianTemplate<cr>", "Inject template"},
         t = {"<cmd>ObsidianToday<cr>", "Create new daily note"},
-        s = {"<cmd>ObsidianSearch<cr>", "Search a note"},
+        o = {"<cmd>ObsidianSearch<cr>", "Search a note"},
         q = {"<cmd>ObsidianQuickSwitch<cr>", "Quick switch"}
     },
 
