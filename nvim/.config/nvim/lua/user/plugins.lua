@@ -101,6 +101,12 @@ return packer.startup(function(use)
         "epwalsh/obsidian.nvim",
         commit = "dbd81af68896a6276001dd9f65c7cb965b411338"
     }
+    use({
+        "iamcco/markdown-preview.nvim",
+        run = "cd app && npm install",
+        setup = function() vim.g.mkdp_filetypes = {"markdown"} end,
+        ft = {"markdown"}
+    })
     use {"vimwiki/vimwiki"}
     use {
         "folke/trouble.nvim",
