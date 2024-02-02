@@ -245,11 +245,6 @@ return packer.startup(function(use)
         commit = "8798b4c36d33723e7bba6ed6e2c202f84bb300de"
     }
 
-    -- Ollama
-    use {
-        "David-Kunz/gen.nvim",
-        commit = "7aa38b8180f53fb4ac1ac02709179ab8c7b3a82f"
-    }
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
     if PACKER_BOOTSTRAP then require("packer").sync() end
