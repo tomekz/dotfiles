@@ -245,6 +245,17 @@ return packer.startup(function(use)
         commit = "8798b4c36d33723e7bba6ed6e2c202f84bb300de"
     }
 
+    use {"MunifTanjim/nui.nvim"}
+
+    use({
+        "jackMort/ChatGPT.nvim",
+        config = function() require("chatgpt").setup() end,
+        requires = {
+            "MunifTanjim/nui.nvim", "nvim-lua/plenary.nvim",
+            "folke/trouble.nvim", "nvim-telescope/telescope.nvim"
+        }
+    })
+
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
     if PACKER_BOOTSTRAP then require("packer").sync() end
