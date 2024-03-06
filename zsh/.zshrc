@@ -71,7 +71,7 @@ SOLARIZED_THEME="dark"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git z zsh-autosuggestions zsh-fzf-history-search zsh-vi-mode) 
+plugins=(git z zsh-autosuggestions zsh-fzf-history-search zsh-vi-mode direnv) 
 
 source $ZSH/oh-my-zsh.sh
 

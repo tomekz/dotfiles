@@ -1,15 +1,17 @@
 Prerequisites:
 
-- tools:
+tools:
 - [fzf](https://github.com/junegunn/fzf)
 - [oh-my-zsh](https://ohmyz.sh/)
 - [lazytdocker](https://github.com/jesseduffield/lazydocker)
 - [lazytdocker](https://github.com/jesseduffield/lazygit)
+- [direnv](https://github.com/direnv/direnv/tree/master)
 
 plugins:
 - [zsh-vi-mode](https://github.com/jeffreytse/zsh-vi-mode)
 - [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
 - [zsh-fzf-history-search](https://github.com/joshskidmore/zsh-fzf-history-search)
+- [direnv](https://github.com/direnv/direnv/blob/master/docs/hook.md#oh-my-zsh)
 
 themes:
 - [gruvbox](https://github.com/sbugzu/gruvbox-zsh)
