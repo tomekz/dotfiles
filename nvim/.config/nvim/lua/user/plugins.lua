@@ -249,7 +249,11 @@ return packer.startup(function(use)
 
     use({
         "jackMort/ChatGPT.nvim",
-        config = function() require("chatgpt").setup() end,
+        config = function()
+            require("chatgpt").setup({
+                predefined_chat_gpt_prompts = "https://raw.githubusercontent.com/tomekz/dotfiles/main/nvim/.config/nvim/lua/user/chatgpt/prompts.csv"
+            })
+        end,
         requires = {
             "MunifTanjim/nui.nvim", "nvim-lua/plenary.nvim",
             "folke/trouble.nvim", "nvim-telescope/telescope.nvim"
