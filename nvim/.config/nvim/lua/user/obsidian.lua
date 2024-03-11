@@ -13,10 +13,12 @@ obsidian.setup {
     --   "BufReadPre path/to/my-vault/**.md",
     --   "BufNewFile path/to/my-vault/**.md",
     -- },
+    notes_subdir = "0 Inbox",
     daily_notes = {
         -- Optional, if you keep daily notes in a separate directory.
         folder = "dailies"
     },
+    new_notes_location = "notes_subdir",
     completion = {
         -- Set to false to disable completion.
         nvim_cmp = true,
@@ -27,7 +29,7 @@ obsidian.setup {
         -- Where to put new notes created from completion. Valid options are
         --  * "current_dir" - put new notes in same directory as the current buffer.
         --  * "notes_subdir" - put new notes in the default notes subdirectory.
-        new_notes_location = "current_dir",
+        new_notes_location = "~/Documents/obisidian/work/0 Inbox",
 
         -- Control how wiki links are completed with these (mutually exclusive) options:
         --
