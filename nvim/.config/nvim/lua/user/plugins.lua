@@ -101,12 +101,12 @@ return packer.startup(function(use)
         "epwalsh/obsidian.nvim",
         commit = "dbd81af68896a6276001dd9f65c7cb965b411338"
     }
-    use({
+    use {
         "iamcco/markdown-preview.nvim",
         run = "cd app && npm install",
         setup = function() vim.g.mkdp_filetypes = {"markdown"} end,
         ft = {"markdown"}
-    })
+    }
     use {"vimwiki/vimwiki"}
     use {
         "folke/trouble.nvim",
@@ -247,18 +247,20 @@ return packer.startup(function(use)
 
     use {"MunifTanjim/nui.nvim"}
 
-    use({
+    use {"nvim-telescope/telescope-symbols.nvim"}
+
+    use {
         "jackMort/ChatGPT.nvim",
         config = function()
-            require("chatgpt").setup({
+            require("chatgpt").setup {
                 predefined_chat_gpt_prompts = "https://raw.githubusercontent.com/tomekz/dotfiles/main/nvim/.config/nvim/lua/user/chatgpt/prompts.csv"
-            })
+            }
         end,
         requires = {
             "MunifTanjim/nui.nvim", "nvim-lua/plenary.nvim",
             "folke/trouble.nvim", "nvim-telescope/telescope.nvim"
         }
-    })
+    }
 
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
