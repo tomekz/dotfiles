@@ -85,10 +85,6 @@ return packer.startup(function(use)
         "ahmedkhalf/project.nvim",
         commit = "628de7e433dd503e782831fe150bb750e56e55d6"
     }
-    use {
-        "lukas-reineke/indent-blankline.nvim",
-        commit = "db7cbcb40cc00fc5d6074d7569fb37197705e7f6"
-    }
     use {"github/copilot.vim"}
     use {"christoomey/vim-tmux-navigator"}
     use {"folke/which-key.nvim"}
