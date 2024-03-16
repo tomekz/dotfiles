@@ -57,10 +57,6 @@ return packer.startup(function(use)
         commit = "97a188a98b5a3a6f9b1b850799ac078faa17ab67"
     }
     use {
-        "JoosepAlviste/nvim-ts-context-commentstring",
-        commit = "32d9627123321db65a4f158b72b757bcaef1a3f4"
-    }
-    use {
         "kyazdani42/nvim-web-devicons",
         commit = "563f3635c2d8a7be7933b9e547f7c178ba0d4352"
     }
@@ -72,7 +68,6 @@ return packer.startup(function(use)
         "akinsho/bufferline.nvim",
         commit = "83bf4dc7bff642e145c8b4547aa596803a8b4dc4"
     }
-    use {"moll/vim-bbye", commit = "25ef93ac5a87526111f43e5110675032dbcacf56"}
     use {
         "nvim-lualine/lualine.nvim",
         commit = "a52f078026b27694d2290e34efa61a6e4a690621"
