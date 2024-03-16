@@ -131,7 +131,6 @@ return packer.startup(function(use)
         "lunarvim/darkplus.nvim",
         commit = "13ef9daad28d3cf6c5e793acfc16ddbf456e1c83"
     }
-    use {"xiyaowong/nvim-transparent"}
     use {"morhetz/gruvbox"}
 
     -- cmp plugins
