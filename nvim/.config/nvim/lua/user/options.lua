@@ -1,7 +1,7 @@
 vim.opt.backup = false -- creates a backup file
 vim.opt.clipboard = "unnamedplus" -- allows neovim to access the system clipboard
 vim.opt.cmdheight = 1 -- more space in the neovim command line for displaying messages
-vim.opt.completeopt = { "menuone", "noselect" } -- mostly just for cmp
+vim.opt.completeopt = {"menuone", "noselect"} -- mostly just for cmp
 vim.opt.conceallevel = 0 -- so that `` is visible in markdown files
 vim.opt.fileencoding = "utf-8" -- the encoding written to a file
 vim.opt.hlsearch = true -- highlight all matches on previous search pattern
@@ -22,7 +22,7 @@ vim.opt.updatetime = 300 -- faster completion (4000ms default)
 vim.opt.writebackup = false -- if a file is being edited by another program (or was written to file while editing with another program), it is not allowed to be edited
 vim.opt.shiftwidth = 4 -- the number of spaces inserted for each indentation
 vim.opt.expandtab = true -- converts tabs to spaces
-vim.opt.tabstop = 4 -- insert 2 spaces for a tab
+vim.opt.tabstop = 4 -- insert 4 spaces for a tab
 vim.opt.cursorline = true -- highlight the current line
 vim.opt.number = true -- set numbered lines
 vim.opt.laststatus = 3 -- only the last window will always have a status line
@@ -38,13 +38,13 @@ vim.opt.fillchars.eob = " " -- show empty lines at the end of a buffer as ` ` {d
 vim.opt.shortmess:append "c" -- hide all the completion messages, e.g. "-- XXX completion (YYY)", "match 1 of 2", "The only match", "Pattern not found"
 vim.opt.whichwrap:append "<,>,[,],h,l" -- keys allowed to move to the previous/next line when the beginning/end of line is reached
 vim.opt.iskeyword:append "-" -- treats words with `-` as single words
-vim.opt.formatoptions:remove { "c", "r", "o" } -- This is a sequence of letters which describes how automatic formatting is to be done
+vim.opt.formatoptions:remove{"c", "r", "o"} -- This is a sequence of letters which describes how automatic formatting is to be done
 vim.opt.linebreak = true
 vim.opt.autoindent = true -- copy indent from current line when starting a new line
 vim.opt.smartindent = true -- make indenting smarter again
 vim.opt.foldmethod = "indent"
 vim.opt.foldlevel = 99
-vim.g.vimwiki_list = { { path = "~/vimwiki/", syntax = "markdown", ext = ".md" } }
+vim.g.vimwiki_list = {{path = "~/vimwiki/", syntax = "markdown", ext = ".md"}}
 -- NON-PRINTABLE CHARACTERS
 vim.opt.list = true
 vim.opt.listchars:append "space:."
