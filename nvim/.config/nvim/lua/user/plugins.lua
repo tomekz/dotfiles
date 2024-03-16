@@ -107,16 +107,6 @@ return packer.startup(function(use)
         commit = "f755fdb1a7b4a03058a9ed8fdd6fc3f94c4f8710",
         config = function() require("go").setup() end
     }
-    use {
-        "rmagatti/goto-preview",
-        config = function()
-            require("goto-preview").setup {
-                default_mappings = true,
-                stack_floating_preview_windows = true,
-                height = 30
-            }
-        end
-    }
     -- Colorschemes
     use {
         "folke/tokyonight.nvim",
