@@ -5,6 +5,7 @@
 # set -o vi
 
 # ~~~~~~~~~~~~~~~ Environment Variables ~~~~~~~~~~~~~~~~~~~~~~~~
+export PS1='\w '
 
 export VISUAL=nvim
 export EDITOR=nvim
@@ -32,14 +33,33 @@ alias lzg='lazygit'
 alias lzd='lazydocker'
 
 # sourcing
-if [[ "$OSTYPE" == "darwin"* ]]; then
-	source "$HOME/.fzf.bash"
-	# echo "I'm on Mac!"
+source "$HOME/.fzf.bash"
 
-	# brew bash completion
-	[[ -r "/opt/homebrew/etc/profile.d/bash_completion.sh" ]] && . "/opt/homebrew/etc/profile.d/bash_completion.sh"
-else
-	#	source /usr/share/fzf/key-bindings.bash
-	#	source /usr/share/fzf/completion.bash
-	[ -f ~/.fzf.bash ] && source ~/.fzf.bash
-fi
+# brew bash completion
+[[ -r "/opt/homebrew/etc/profile.d/bash_completion.sh" ]] && . "/opt/homebrew/etc/profile.d/bash_completion.sh"
+# --------------------------- smart prompt ---------------------------
+
+PROMPT_AT=@
+
+__ps1() {
+	local P='$' dir="${PWD##*/}" B short \
+		r='\[\e[31m\]' g='\[\e[30m\]' h='\[\e[34m\]' \
+		u='\[\e[33m\]' p='\[\e[34m\]' w='\[\e[35m\]' \
+		b='\[\e[36m\]' x='\[\e[0m\]'
+
+	[[ $EUID == 0 ]] && P='#' && u=$r && p=$u # root
+	[[ $PWD = / ]] && dir=/
+	[[ $PWD = "$HOME" ]] && dir='~'
+
+	B=$(git branch --show-current 2>/dev/null)
+	[[ $dir = "$B" ]] && B=.
+
+	[[ $B == master || $B == main ]] && b="$r"
+	[[ -n "$B" ]] && B="$g($b$B$g)"
+
+	short="$w$dir$B$p$P$x "
+
+	PS1="$short"
+}
+
+PROMPT_COMMAND="__ps1"
