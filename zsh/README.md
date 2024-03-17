@@ -1,4 +1,8 @@
-Prerequisites:
+## Disclaimer
+
+I no longer use zsh and changed my default shell to bash
+
+## Prerequisites:
 
 tools:
 - [fzf](https://github.com/junegunn/fzf)

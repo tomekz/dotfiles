@@ -7,7 +7,6 @@ The purpose of this repository is to provide a centralized location for all of m
 stow --target ~ tmux
 # nvim
 stow --target ~ nvim
-# zsh
-# requires the oh-my-zsh submodule to be initialized
-stow --target ~ zsh
+# bash
+stow --target ~ bash
 ```
