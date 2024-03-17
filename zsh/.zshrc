@@ -97,12 +97,14 @@ source $ZSH/oh-my-zsh.sh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 #
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-alias vim='nvim'
+# aliases
+alias v='nvim'
 alias lzd='lazydocker'
 alias lzq='lazygit'
+# list all
+alias la='ls -lathr'
+# finds all files recursively and sorts by last modification, ignore hidden files
+alias last='find . -type f -not -path "*/\.*" -exec ls -lrt {} +'
 
 # go path
 # export GOPATH=$HOME/go
