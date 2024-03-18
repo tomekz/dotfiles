@@ -11,7 +11,8 @@ export VISUAL=nvim
 export EDITOR=nvim
 export XDG_CONFIG_HOME="$HOME"/.config
 
-export PATH=/opt/homebrew/bin:$HOME/nvim-macos/bin:$HOME/.local/share/nvim/mason/bin:$PATH
+export GOPATH=$HOME/go
+export PATH=$GOPATH/bin:/opt/homebrew/bin:$HOME/nvim-macos/bin:$HOME/.local/share/nvim/mason/bin:$PATH
 
 # ~~~~~~~~~~~~~~~ History ~~~~~~~~~~~~~~~~~~~~~~~~
 
