@@ -201,7 +201,7 @@ return packer.startup(function(use)
     use {"MunifTanjim/nui.nvim"}
 
     use {"nvim-telescope/telescope-symbols.nvim"}
-
+    use {"famiu/bufdelete.nvim"}
     use {
         "jackMort/ChatGPT.nvim",
         config = function()
