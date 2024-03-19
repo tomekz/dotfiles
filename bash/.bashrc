@@ -65,16 +65,15 @@ __ps1() {
 
 PROMPT_COMMAND="__ps1"
 
+#aws sso login function with tab completion with list of available AWS profiles from the `~/.aws/config` 
+function aws_login(){
+    export AWS_VAULT=""
+    aws-vault exec $1 
+}
 
-# TODO: adapt this from zsh to bash
-# #aws sso login
-# function aws_login(){export AWS_VAULT=""; aws-vault exec $1 -- sh}
-# _aws_login(){
-#     local cur=${COMP_WORDS[COMP_CWORD]}
-#     local options_set="$(awk '/^\[profile/ {print $2}' ~/.aws/config | sed 's/]//' | tr '\n' ' ')"
-#     COMPREPLY=( $(compgen -W "$options_set" -- $cur) )
-# }
-# complete -F _aws_login aws_login
-#
-# #aws sso logout
-# function aws_logout(){aws sso logout}
+_aws_login(){
+    local cur=${COMP_WORDS[COMP_CWORD]}
+    local options_set="$(awk '/^\[profile/ {print $2}' ~/.aws/config | sed 's/]//' | tr '\n' ' ')"
+    COMPREPLY=( $(compgen -W "$options_set" -- $cur) )
+}
+complete -F _aws_login aws_login
