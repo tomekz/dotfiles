@@ -1,6 +1,6 @@
 local servers = {
     "sumneko_lua", "cssls", "html", "tsserver", "pyright", "bashls", "jsonls",
-    "yamlls", "terraformls", "gopls", "eslint"
+    "terraformls", "gopls", "eslint"
 }
 
 local settings = {
