@@ -41,6 +41,15 @@ source "$HOME/.fzf.bash"
 
 # brew bash completion
 [[ -r "/opt/homebrew/etc/profile.d/bash_completion.sh" ]] && . "/opt/homebrew/etc/profile.d/bash_completion.sh"
+
+# kubectl
+alias k='kubectl'
+source <(kubectl completion bash)
+complete -o default -F __start_kubectl k
+alias kgp='kubectl get pods'
+alias kc='kubectx'
+alias kn='kubens'
+
 # --------------------------- smart prompt ---------------------------
 
 PROMPT_AT=@
