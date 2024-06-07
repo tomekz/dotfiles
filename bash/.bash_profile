@@ -1,4 +1,5 @@
 export BASH_SILENCE_DEPRECATION_WARNING=1
+export LANG=en_GB.UTF-8
 
 # Only run on macOS
 if [[ "$OSTYPE" == "darwin"* ]]; then
