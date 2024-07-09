@@ -206,7 +206,8 @@ return packer.startup(function(use)
         "jackMort/ChatGPT.nvim",
         config = function()
             require("chatgpt").setup {
-                predefined_chat_gpt_prompts = "https://raw.githubusercontent.com/tomekz/dotfiles/main/nvim/.config/nvim/lua/user/chatgpt/prompts.csv"
+                predefined_chat_gpt_prompts = "https://raw.githubusercontent.com/tomekz/dotfiles/main/nvim/.config/nvim/lua/user/chatgpt/prompts.csv",
+                openai_params = {model = "gpt-4o"}
             }
         end,
         requires = {
