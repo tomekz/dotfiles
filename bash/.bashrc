@@ -12,7 +12,7 @@ export EDITOR=nvim
 export XDG_CONFIG_HOME="$HOME"/.config
 
 export GOPATH=$HOME/go
-export PATH=$GOPATH/bin:/opt/homebrew/bin:$HOME/nvim-macos/bin:$HOME/.local/share/nvim/mason/bin:$PATH
+export PATH=$GOPATH/bin:/opt/homebrew/bin:/opt/nvim-linux64/bin:$HOME/.local/share/nvim/mason/bin:$PATH
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
@@ -37,18 +37,19 @@ alias lzg='lazygit'
 alias lzd='lazydocker'
 
 # sourcing
-source "$HOME/.fzf.bash"
-
-# brew bash completion
-[[ -r "/opt/homebrew/etc/profile.d/bash_completion.sh" ]] && . "/opt/homebrew/etc/profile.d/bash_completion.sh"
-
+# source "$HOME/.fzf.bash"
+# Set up fzf key bindings and fuzzy completion
+unamestr=$(uname)
+if [[ "$unamestr" == 'Linux' ]]; then
+   source /usr/share/doc/fzf/examples/key-bindings.bash
+fi
 # kubectl
-alias k='kubectl'
-source <(kubectl completion bash)
-complete -o default -F __start_kubectl k
-alias kgp='kubectl get pods'
-alias kc='kubectx'
-alias kn='kubens'
+# alias k='kubectl'
+# source <(kubectl completion bash)
+# complete -o default -F __start_kubectl k
+# alias kgp='kubectl get pods'
+# alias kc='kubectx'
+# alias kn='kubens'
 
 # --------------------------- smart prompt ---------------------------
 
