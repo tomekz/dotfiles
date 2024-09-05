@@ -37,11 +37,12 @@ alias lzg='lazygit'
 alias lzd='lazydocker'
 
 # sourcing
-# source "$HOME/.fzf.bash"
 # Set up fzf key bindings and fuzzy completion
 unamestr=$(uname)
 if [[ "$unamestr" == 'Linux' ]]; then
    source /usr/share/doc/fzf/examples/key-bindings.bash
+else
+   source "$HOME/.fzf.bash"
 fi
 # kubectl
 # alias k='kubectl'
