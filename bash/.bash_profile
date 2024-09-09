@@ -9,4 +9,6 @@ fi
 
 bind -f ~/.inputrc
 
+brew_etc="$(brew --prefix)/etc" && [[ -r "${brew_etc}/profile.d/bash_completion.sh" ]] && . "${brew_etc}/profile.d/bash_completion.sh"
+
 [[ -s ~/.bashrc ]] && source ~/.bashrc
