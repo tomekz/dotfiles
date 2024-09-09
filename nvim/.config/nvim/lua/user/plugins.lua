@@ -78,7 +78,7 @@ return packer.startup(function(use)
     }
     use {"github/copilot.vim"}
     use {"christoomey/vim-tmux-navigator"}
-    use {"folke/which-key.nvim"}
+    use {"folke/which-key.nvim", commit = "0539da0"}
     use {"mbbill/undotree"}
     use {
         "epwalsh/obsidian.nvim",
@@ -172,11 +172,14 @@ return packer.startup(function(use)
     -- Telescope
     use {
         "nvim-telescope/telescope.nvim",
-        commit = "76ea9a898d3307244dce3573392dcf2cc38f340f"
+        commit = "a0bbec2"
     }
 
     -- Treesitter
-    use {"nvim-treesitter/nvim-treesitter", commit = "cc360a9"}
+    use {
+        "nvim-treesitter/nvim-treesitter",
+        commit = "f197a15b0d1e8d555263af20add51450e5aaa1f0"
+    }
 
     use {
         "nvim-treesitter/nvim-treesitter-textobjects",
