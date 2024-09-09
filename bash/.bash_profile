@@ -5,10 +5,9 @@ export LANG=en_GB.UTF-8
 if [[ "$OSTYPE" == "darwin"* ]]; then
   # needed for brew
   eval "$(/opt/homebrew/bin/brew shellenv)"
+  brew_etc="$(brew --prefix)/etc" && [[ -r "${brew_etc}/profile.d/bash_completion.sh" ]] && . "${brew_etc}/profile.d/bash_completion.sh"
 fi
 
 bind -f ~/.inputrc
-
-brew_etc="$(brew --prefix)/etc" && [[ -r "${brew_etc}/profile.d/bash_completion.sh" ]] && . "${brew_etc}/profile.d/bash_completion.sh"
 
 [[ -s ~/.bashrc ]] && source ~/.bashrc
