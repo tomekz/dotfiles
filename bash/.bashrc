@@ -12,11 +12,11 @@ export EDITOR=nvim
 export XDG_CONFIG_HOME="$HOME"/.config
 
 if [[ "$unamestr" == 'Linux' ]]; then
-    export GOPATH=/usr/local/go
+    export GOPATH=/usr/local/go/
 else
     export GOPATH=$HOME/go
 fi
-export PATH=$GOPATH/bin:/opt/homebrew/bin:/opt/nvim-linux64/bin:$HOME/.local/share/nvim/mason/bin:$PATH
+export PATH=$GOPATH/bin:/opt/homebrew/bin:/opt/nvim-linux64/bin:$HOME/.local/share/nvim/mason/bin:~/.local/bin:~/.local/kitty.app:$PATH
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
