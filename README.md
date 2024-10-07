@@ -9,4 +9,6 @@ stow --target ~ tmux
 stow --target ~ nvim
 # bash
 stow --target ~ bash
+# kitty
+stow --target ~ kitty
 ```
