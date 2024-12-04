@@ -1,5 +1,5 @@
 # If not running interactively, don't do anything
-[[ $- != *i* ]] && return
+# [[ $- != *i* ]] && return
 
 # Set to superior editing mode
 # set -o vi
@@ -84,7 +84,7 @@ PROMPT_COMMAND="__ps1"
 #aws sso login function with tab completion with list of available AWS profiles from the `~/.aws/config` 
 function aws_login(){
     export AWS_VAULT=""
-    aws-vault exec $1 
+    aws-vault exec $1
 }
 
 _aws_login(){
@@ -92,4 +92,10 @@ _aws_login(){
     local options_set="$(awk '/^\[profile/ {print $2}' ~/.aws/config | sed 's/]//' | tr '\n' ' ')"
     COMPREPLY=( $(compgen -W "$options_set" -- $cur) )
 }
+
+brew_etc="$(brew --prefix)/etc" && [[ -r "${brew_etc}/profile.d/bash_completion.sh" ]] && . "${brew_etc}/profile.d/bash_completion.sh"
+
 complete -F _aws_login aws_login
+source <(kubectl completion bash)
+complete -o default -F __start_kubectl k
+
