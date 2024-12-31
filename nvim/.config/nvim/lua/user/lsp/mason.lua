@@ -1,5 +1,5 @@
 local servers = {
-    "sumneko_lua", "cssls", "html", "tsserver", "pyright", "bashls", "jsonls",
+    "lua_ls", "cssls", "html", "ts_ls", "pyright", "bashls", "jsonls",
     "terraformls", "gopls", "eslint"
 }
 
