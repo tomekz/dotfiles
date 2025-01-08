@@ -11,12 +11,9 @@ export VISUAL=nvim
 export EDITOR=nvim
 export XDG_CONFIG_HOME="$HOME"/.config
 
-if [[ "$unamestr" == 'Linux' ]]; then
-    export GOPATH=/usr/local/go/bin
-else
-    export GOPATH=$HOME/go
-fi
-export PATH=$GOPATH/bin:/opt/homebrew/bin:/opt/nvim-linux64/bin:$HOME/.local/share/nvim/mason/bin:~/.local/bin:~/.local/kitty.app:$PATH
+export GOROOT=/usr/local/go
+export GOPATH=/usr/local/go/bin
+export PATH=$GOPATH:/opt/homebrew/bin:/opt/nvim-linux64/bin:$HOME/.local/share/nvim/mason/bin:~/.local/bin:~/.local/kitty.app:$PATH
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
@@ -93,7 +90,9 @@ _aws_login(){
     COMPREPLY=( $(compgen -W "$options_set" -- $cur) )
 }
 
-brew_etc="$(brew --prefix)/etc" && [[ -r "${brew_etc}/profile.d/bash_completion.sh" ]] && . "${brew_etc}/profile.d/bash_completion.sh"
+if [[ "$unamestr" == 'Darwin' ]]; then
+    brew_etc="$(brew --prefix)/etc" && [[ -r "${brew_etc}/profile.d/bash_completion.sh" ]] && . "${brew_etc}/profile.d/bash_completion.sh"
+fi
 
 complete -F _aws_login aws_login
 source <(kubectl completion bash)
