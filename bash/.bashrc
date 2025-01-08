@@ -11,8 +11,8 @@ export VISUAL=nvim
 export EDITOR=nvim
 export XDG_CONFIG_HOME="$HOME"/.config
 
-export GOROOT=/usr/local/go
-export GOPATH=/usr/local/go/bin
+export GOROOT=/home/tomekz/go
+export GOPATH=$GOROOT/bin
 export PATH=$GOPATH:/opt/homebrew/bin:/opt/nvim-linux64/bin:$HOME/.local/share/nvim/mason/bin:~/.local/bin:~/.local/kitty.app:$PATH
 
 export NVM_DIR="$HOME/.nvm"
