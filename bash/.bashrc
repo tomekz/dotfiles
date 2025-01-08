@@ -12,7 +12,7 @@ export EDITOR=nvim
 export XDG_CONFIG_HOME="$HOME"/.config
 
 if [[ "$unamestr" == 'Linux' ]]; then
-    export GOPATH=/usr/local/go/
+    export GOPATH=/usr/local/go/bin
 else
     export GOPATH=$HOME/go
 fi
