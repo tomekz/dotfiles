@@ -1,10 +1,11 @@
 ## Disclaimer
 
-I no longer use zsh and changed my default shell to bash
+I don't use zsh on my linux based machines
 
 ## Prerequisites:
 
 tools:
+- [zinit](https://github.com/zdharma-continuum/zinit)
 - [fzf](https://github.com/junegunn/fzf)
 - [oh-my-zsh](https://ohmyz.sh/)
 - [lazytdocker](https://github.com/jesseduffield/lazydocker)
