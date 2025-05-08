@@ -1,5 +1,50 @@
+autoload -U +X bashcompinit && bashcompinit
+# append completions to fpath 
+fpath=(${ASDF_DIR}/completions $fpath) 
+# initialise completions with ZSH's compinit 
+autoload -Uz compinit && compinit
+### Added by Zinit's installer
+if [[ ! -f $HOME/.local/share/zinit/zinit.git/zinit.zsh ]]; then
+    print -P "%F{33} %F{220}Installing %F{33}ZDHARMA-CONTINUUM%F{220} Initiative Plugin Manager (%F{33}zdharma-continuum/zinit%F{220})…%f"
+    command mkdir -p "$HOME/.local/share/zinit" && command chmod g-rwX "$HOME/.local/share/zinit"
+    command git clone https://github.com/zdharma-continuum/zinit "$HOME/.local/share/zinit/zinit.git" && \
+        print -P "%F{33} %F{34}Installation successful.%f%b" || \
+        print -P "%F{160} The clone has failed.%f%b"
+fi
+
+source "$HOME/.local/share/zinit/zinit.git/zinit.zsh"
+autoload -Uz _zinit
+(( ${+_comps} )) && _comps[zinit]=_zinit
+### End of Zinit's installer chunk
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
+
+zinit ice depth=1
+zinit light jeffreytse/zsh-vi-mode
+# zsh-fzf-history-search
+zinit ice lucid wait'0'
+zinit light joshskidmore/zsh-fzf-history-search
+
+
+#aws sso login function with tab completion with list of available AWS profiles from the `~/.aws/config` 
+function aws_login(){
+    export AWS_VAULT=""
+    aws-vault exec $1
+}
+
+_aws_login(){
+    local cur=${COMP_WORDS[COMP_CWORD]}
+    local options_set="$(awk '/^\[profile/ {print $2}' ~/.aws/config | sed 's/]//' | tr '\n' ' ')"
+    COMPREPLY=( $(compgen -W "$options_set" -- $cur) )
+}
+
+complete -F _aws_login aws_login
+# if [[ "$unamestr" == 'Darwin' ]]; then
+#     brew_etc="$(brew --prefix)/etc" && [[ -r "${brew_etc}/profile.d/bash_completion.sh" ]] && . "${brew_etc}/profile.d/bash_completion.sh"
+# fi
+# complete -F _aws_login aws_login
+# source <(kubectl completion bash)
+# complete -o default -F __start_kubectl k
 
 # Path to your oh-my-zsh installation.
 # export ZSH="$HOME/.oh-my-zsh"
@@ -113,3 +158,11 @@ alias last='find . -type f -not -path "*/\.*" -exec ls -lrt {} +'
 # java path
 # export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_221.jdk/Contents/Home
 # export PATH=$JAVA_HOME/bin:$PATH
+
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init - zsh)"
