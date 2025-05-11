@@ -1,3 +1,5 @@
+export VISUAL=nvim
+export EDITOR=nvim
 autoload -U +X bashcompinit && bashcompinit
 # append completions to fpath 
 fpath=(${ASDF_DIR}/completions $fpath) 
@@ -42,8 +44,7 @@ complete -F _aws_login aws_login
 # if [[ "$unamestr" == 'Darwin' ]]; then
 #     brew_etc="$(brew --prefix)/etc" && [[ -r "${brew_etc}/profile.d/bash_completion.sh" ]] && . "${brew_etc}/profile.d/bash_completion.sh"
 # fi
-# complete -F _aws_login aws_login
-# source <(kubectl completion bash)
+source <(kubectl completion zsh)
 # complete -o default -F __start_kubectl k
 
 # Path to your oh-my-zsh installation.
@@ -150,7 +151,11 @@ alias lzq='lazygit'
 alias la='ls -lathr'
 # finds all files recursively and sorts by last modification, ignore hidden files
 alias last='find . -type f -not -path "*/\.*" -exec ls -lrt {} +'
+alias bs='aws_login broker-staging'
+alias k='kubectl'
 
+alias kc='kubectx'
+alias kn='kubens'
 # go path
 # export GOPATH=$HOME/go
 # export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
