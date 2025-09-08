@@ -13,7 +13,7 @@ export XDG_CONFIG_HOME="$HOME"/.config
 
 export GOROOT=/usr/local/go
 export GOPATH=$GOROOT/bin
-export PATH=$GOPATH:/opt/homebrew/bin:/opt/nvim-macos-arm64/bin:$HOME/.local/share/nvim/mason/bin:~/.local/bin:~/.local/kitty.app:$PATH
+export PATH=$GOPATH:/opt/nvim-linux-x86_64/bin:$HOME/.local/share/nvim/mason/bin:~/.local/bin:~/.local/kitty.app:$PATH
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                   # This loads nvm
@@ -98,3 +98,6 @@ complete -F _aws_login aws_login
 source <(kubectl completion bash)
 complete -o default -F __start_kubectl k
 eval "$(gh copilot alias -- bash)"
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init - bash)"

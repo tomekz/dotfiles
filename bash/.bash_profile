@@ -11,3 +11,6 @@ fi
 bind -f ~/.inputrc
 
 [[ -s ~/.bashrc ]] && source ~/.bashrc
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init - bash)"
