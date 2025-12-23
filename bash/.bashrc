@@ -12,8 +12,8 @@ export EDITOR=nvim
 export XDG_CONFIG_HOME="$HOME"/.config
 
 export GOROOT=/usr/local/go
-export GOPATH=$GOROOT/bin
-export PATH=$GOPATH:/opt/nvim-linux-x86_64/bin:$HOME/.local/share/nvim/mason/bin:~/.local/bin:~/.local/kitty.app:$PATH
+export GOPATH=$HOME/go
+export PATH=$GOPATH/bin:/usr/local/go/bin:/opt/nvim-linux-x86_64/bin:$HOME/.local/share/nvim/mason/bin:~/.local/bin:~/.local/kitty.app:$PATH
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                   # This loads nvm
